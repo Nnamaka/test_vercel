@@ -1,0 +1,4 @@
+{
+    "functions": ["api/*.py"],
+    "framework": "next.js"
+}
