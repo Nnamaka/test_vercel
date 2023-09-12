@@ -7,8 +7,18 @@ export async function GET(
     res: NextApiResponse
 ) {
     
-    console.log(process.env.NODE_ENV)
-    const response = await axios.get("/api/python")
+    // const domain = vercel.deployments.domain;
+    let domain = ''
+
+    if (process.env.NODE_ENV === 'development'){
+        domain = `${process.env.VERCEL_URL}:5328/api/python`
+    } else{
+        domain = `https://${process.env.VERCEL_URL}:5328/api/python`;
+    }
+
+    // const response = await axios.get(`https://${domain}/api/python`)
+    console.log(domain)
+    const response = await axios.get(domain)
 
     return NextResponse.json(response.data)
 }
