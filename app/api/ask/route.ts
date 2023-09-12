@@ -13,7 +13,7 @@ export async function GET(
     if (process.env.NODE_ENV === 'development'){
         domain = `${process.env.VERCEL_URL}:5328/api/python`
     } else{
-        domain = `https://${process.env.VERCEL_URL}:5328/api/python`;
+        domain = `https://${process.env.VERCEL_URL}/api/python`;
     }
 
     // const response = await axios.get(`https://${domain}/api/python`)
