@@ -8,7 +8,7 @@ export async function GET(
 ) {
     
     console.log(process.env.NODE_ENV)
-    const response = await axios.get("http://localhost:5328/api/python")
+    const response = await axios.get("/api/python")
 
     return NextResponse.json(response.data)
 }
