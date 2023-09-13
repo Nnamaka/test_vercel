@@ -1,6 +1,6 @@
 {
     "functions": {
-        "api/*.py":{
+        "api/**/*.py,api/**/*.ts,api/**/*.js":{
             
             "memory": 1024,
             "maxDuration": 10
