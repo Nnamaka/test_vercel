@@ -19,16 +19,16 @@ export async function GET(
         } else
             domain = `${process.env.VERCEL_URL}:5328/api/python`
 
+        if (domain.includes(':3000'))
+            domain = domain.replace(':3000', '')
 
+        domain = 'http://' + domain
     } else {
         domain = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/python`;
     }
 
     // const response = await axios.get(`https://${domain}/api/python`)
-    if (domain.includes(':3000'))
-        domain = domain.replace(':3000','')
 
-    domain = 'http://' + domain
     console.log(domain)
     const response = await axios.get(domain)
 
